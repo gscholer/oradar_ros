@@ -376,6 +376,7 @@ namespace ordlidar
 			if (retval == 0)
 			{
 				lidar_ptr->valid_data_ = 1;
+				if (recv_size > TMPBUFF_SIZE) recv_size = TMPBUFF_SIZE;
 				actual_read = lidar_ptr->serial_->readData(readbuf, recv_size);
 				if (actual_read > 0)
 				{
